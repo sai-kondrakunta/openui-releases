@@ -14,8 +14,13 @@ version is out; press OK to install it.
 3. Allow Downloader to install apps when asked, then choose **Install**.
 4. Open **OpenUI**, then Settings → **Phone setup** to sign in to Jellyfin and set things up from your phone.
 
-Optional, with a computer and `adb`, for self-repair, animation speed and Now Playing:
+Also install **OpenUI Guard** (`guard.apk` from the same release). It keeps Fire TV's own home screen hidden while
+OpenUI updates. Downloader code: `github.com/sai-kondrakunta/openui-releases/releases/latest/download/guard.apk`
+
+With a computer and `adb` (recommended): self-repair, Home without any Fire TV flash, Now Playing:
 
 ```
 adb shell pm grant com.openui.launcher android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant com.openui.launcher android.permission.READ_LOGS
+adb shell pm grant com.openui.guard android.permission.READ_LOGS
 ```
